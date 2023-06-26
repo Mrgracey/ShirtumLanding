@@ -1,0 +1,1132 @@
+/* Druk Wide Text */
+@font-face {
+    font-family: "DrukWideText";
+    src: local("DrukWideText"),
+        url("./assets/fonts/DrukTextWide-Medium-Trial.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "DrukWideTextHeavy";
+    src: local("DrukWideTextHeavy"),
+        url("./assets/fonts/DrukTextWide-Heavy-Trial.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "DrukWideTextItalic";
+    src: local("DrukWideTextItalic"),
+        url("./assets/fonts/DrukTextWide-MediumItalic-Trial.otf") format("truetype");
+}
+
+/* GT Flexa */
+@font-face {
+    font-family: "GTFlexaCompressedLight";
+    src: local("GTFlexaCompressedLight"),
+        url("./assets/fonts/GT-Flexa-Compressed-Light.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCompressedRegular";
+    src: local("GTFlexaCompressedRegular"),
+        url("./assets/fonts/GT-Flexa-Compressed-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCompressedMedium";
+    src: local("GTFlexaCompressedMedium"),
+        url("./assets/fonts/GT-Flexa-Compressed-Medium.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCompressedBold";
+    src: local("GTFlexaCompressedBold"),
+        url("./assets/fonts/GT-Flexa-Compressed-Bold.otf") format("truetype");
+}
+
+/* Regular*/
+@font-face {
+    font-family: "GTFlexaXCompressedLight";
+    src: local("GTFlexaXCompressedLight"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Light.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaXCompressedRegular";
+    src: local("GTFlexaXCompressedRegular"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaXCompressedMedium";
+    src: local("GTFlexaXCompressedMedium"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Medium.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaXCompressedBold";
+    src: local("GTFlexaXCompressedBold"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Bold.otf") format("truetype");
+}
+
+/* Italic */
+@font-face {
+    font-family: "GTFlexaXCompressedLightItalic";
+    src: local("GTFlexaXCompressedLightItalic"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Light-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaXCompressedRegularItalic";
+    src: local("GTFlexaXCompressedRegularItalic"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Regular-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaXCompressedMediumItalic";
+    src: local("GTFlexaXCompressedMediumItalic"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Medium-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaXCompressedBoldItalic";
+    src: local("GTFlexaXCompressedBoldItalic"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Bold-Italic.otf") format("truetype");
+}
+
+/*Extras*/
+@font-face {
+    font-family: "GTFlexaRegularItalic";
+    src: local("GTFlexaRegularItalic"),
+        url("./assets/fonts/GT-Flexa-Standard-Regular-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaMediumItalic";
+    src: local("GTFlexaMediumItalic"),
+        url("./assets/fonts/GT-Flexa-Standard-Medium-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCompressedBoldItalic";
+    src: local("GTFlexaCompressedBoldItalic"),
+        url("./assets/fonts/GT-Flexa-Compressed-Bold-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCondensedBold";
+    src: local("GTFlexaCondensedBold"),
+        url("./assets/fonts/GT-Flexa-Condensed-Bold.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCondensedBoldItalic";
+    src: local("GTFlexaCondensedBoldItalic"),
+        url("./assets/fonts/GT-Flexa-Condensed-Bold-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaExtendedMediumItalic";
+    src: local("GTFlexaExtendedMediumItalic"),
+        url("./assets/fonts/GT-Flexa-Extended-Medium-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaExpandedBoldItalic";
+    src: local("GTFlexaExpandedBoldItalic"),
+        url("./assets/fonts/GT-Flexa-Expanded-Bold-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaXCompressedThinItalic";
+    src: local("GTFlexaXCompressedThinItalic"),
+        url("./assets/fonts/GT-Flexa-X-Compressed-Thin-Italic.otf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "GTFlexaBoldItalic";
+    src: local("GTFlexaBoldItalic"),
+        url("./assets/fonts/GT-Flexa-Standard-Bold-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCompressedThinItalic";
+    src: local("GTFlexaCompressedThinItalic"),
+        url("./assets/fonts/GT-Flexa-Compressed-Thin-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCompressedMediumItalic";
+    src: local("GTFlexaCompressedMediumItalic"),
+        url("./assets/fonts/GT-Flexa-Compressed-Medium-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "GTFlexaCondensedRegular";
+    src: local("GTFlexaCondensedRegular"),
+        url("./assets/fonts/GT-Flexa-Condensed-Regular.otf") format("truetype");
+}
+
+:root {
+    --green-main: #00F645;
+    --green-second: #00A40C;
+    --green-third: #00FFB1;
+    --green-fouth: #BEFF00;
+    --blue-main: #1B00DD;
+    --blue-second: #235BFF;
+    --blue-third: #4975FF;
+    --purple: #780BEE;
+    --pink-main: #FF0088;
+    --pink-second: #FF0049;
+    --pink-third: #FF4171;
+    --yellow-main: #E4B000;
+    --yellow-second: #FFD100;
+    --yellow-third: #FFE24F;
+    --orange: #FF6700;
+    --white: #FFF;
+    --black: #000;
+    --gray-first: #111;
+    --gray-second: #1F1F1F;
+    --gray-third: #636363;
+    --gray-fourth: #b3b3b3;
+    --brown: #c25d00;
+    --diamond: #9CFEF8;
+    --global-rem: .8vw;
+
+}
+
+
+* {
+    font-family: "GTFlexaXCompressedRegularItalic";
+    color: var(--white);
+}
+
+html {
+    overflow-x: hidden;
+    font-size: var(--global-rem);
+}
+
+body {
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    height: 7vh;
+    justify-content: space-between;
+    padding: 5px calc(5px + 15%);
+    font-size: 1rem;
+    text-transform: uppercase;
+    position: fixed;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.nav::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 1px;
+    width: 75%;
+    border-bottom: 1px solid var(--green-fouth);
+    transform: translateX(-50%);
+}
+
+.nav>div {
+    color: var(--green-main);
+    font-family: 'GTFlexaExtendedMediumItalic';
+    max-width: 10%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav .logo {
+    background: url(./Assets/Icons/ShieldShirtum.svg);
+    background-size: cover;
+    aspect-ratio: 4/5;
+    width: 2rem;
+}
+
+.nav .myshi {
+    background: url(./Assets/Icons/myshiBtnBackground.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    font-size: 1.7rem;
+    color: var(--black);
+    font-family: 'GTFlexaExpandedBoldItalic';
+}
+
+.sideNav {
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    z-index: 4;
+}
+
+.sideNav .buyShi {
+    background: url(./Assets/Icons/SHI.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 1;
+    transform: translateX(-12%);
+    width: 130%;
+    cursor: pointer;
+}
+
+.sideNav .socials {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--purple);
+}
+
+.sideNav .socials>div {
+    aspect-ratio: 1;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sideNav .socials .telegram {
+    background: url(./Assets/Icons/Telegram.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sideNav .socials .discord {
+    background: url(./Assets/Icons/discord.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sideNav .socials .instagram {
+    background: url(./Assets/Icons/Instagram.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sideNav .socials .twitter {
+    background: url(./Assets/Icons/Twitter.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sideNav .socials .twitch {
+    background: url(./Assets/Icons/Twitch.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sideNav .socials .tiktok {
+    background: url(./Assets/Icons/TikTok.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.first {
+    background: url(./Assets/img/BackGround.png);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.first .header {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.first .header .titleWrapper {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    gap: 10px;
+}
+
+.first .header .description {
+    font-family: 'GTFlexaRegularItalic';
+    flex: 2;
+    font-size: 1.3rem;
+}
+
+.first .header .titleWrapper .title {
+    display: flex;
+    flex-direction: column;
+    font-size: 7rem;
+    line-height: .8;
+}
+
+.first .header .titleWrapper .btn.club {
+    font-family: 'GTFlexaCondensedBold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.4rem;
+    width: 40%;
+    color: var(--green-main);
+    box-shadow: 0px 0px 10px 0px var(--green-fouth);
+    cursor: pointer;
+}
+
+.first .header .titleWrapper .title .shirtum {
+    font-family: 'GTFlexaCompressedBoldItalic';
+    color: var(--green-main);
+}
+
+.second {
+    background: #0f002d;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 0 15%;
+}
+
+.second .left {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.second .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    justify-content: space-around;
+}
+
+.second .left .title {
+    font-size: 7rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 0 10%;
+}
+
+.second .left .title img {
+    width: 4rem;
+}
+
+.second .left .title .shirtum {
+    font-family: 'GTFlexaXCompressedThinItalic';
+}
+
+.second .left .title .number {
+    font-family: 'GTFlexaXCompressedRegularItalic';
+}
+
+.second .left .title .club {
+    font-family: 'GTFlexaXCompressedBoldItalic';
+    color: var(--green-fouth);
+}
+
+.second .left .boxWrapper {
+    display: flex;
+}
+
+.second .left .boxWrapper .box {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1;
+}
+
+.second .left .boxWrapper .box.basic {
+    background: url(./Assets/img/Rectangle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    font-size: 1.7rem;
+    max-height: 50vh;
+}
+
+.second .left .boxWrapper .box.numbers {
+    background: url(./Assets/img/RectangleNumbers.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.second .left .boxWrapper .box.numbers>div {
+    font-family: 'GTFlexaBoldItalic';
+    max-width: 70%;
+    padding-left: 20%;
+    position: absolute;
+}
+
+.second .left .boxWrapper .box.numbers .one {
+    top: 15%;
+    left: 6%;
+}
+
+.second .left .boxWrapper .box.numbers .two {
+    top: 42%;
+    left: 3%;
+}
+
+.second .left .boxWrapper .box.numbers .three {
+    top: 66%;
+}
+
+.second .left .boxWrapper .box.basic>div {
+    font-family: 'GTFlexaRegularItalic';
+    max-width: 70%;
+    padding: 0 15%;
+}
+
+.second .left .boxWrapper .box.basic>div span {
+    font-family: 'GTFlexaMediumItalic';
+    color: var(--green-fouth);
+}
+
+.second .right .buyShi {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    gap: 20px;
+}
+
+.second .right .buyShi .text {
+    font-family: 'GTFlexaCondensedBoldItalic';
+}
+
+.second .right .buyShi .busdWrapper,
+.second .right .buyShi .shiWrapper {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.second .right .buyShi>div .btn {
+    border: 1px solid var(--green-fouth);
+    width: 45%;
+    padding: 10px 0px 10px 15%;
+    font-family: 'GTFlexaBoldItalic';
+    font-size: 2rem;
+    color: var(--green-fouth);
+    cursor: pointer;
+}
+
+.second .right .buyShi>div span {
+    width: 30%;
+    border-bottom: 1px solid var(--green-fouth);
+}
+
+.right .extras {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right .extras .btnWrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.right .extras .btnWrapper>div {
+    border: 1px solid var(--green-fouth);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.right .extras .btnWrapper>div>img {
+    max-height: 20px;
+}
+
+.right .extras .btn.whitepaper {
+    font-size: 3rem;
+    font-family: 'GTFlexaCondensedBoldItalic';
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-around;
+    color: var(--green-fouth);
+    border-radius: 10px;
+    border: 1px solid var(--green-fouth);
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.third {
+    height: 180vh;
+    background: url(./Assets/img/BackGround3.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 0 15%;
+    flex-direction: column;
+}
+
+
+.third .title {
+    font-size: 7rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-right: 30%;
+}
+
+
+.third .title img {
+    width: 4rem;
+}
+
+.third .title .shirtum {
+    font-family: 'GTFlexaXCompressedThinItalic';
+}
+
+.third .title .number {
+    font-family: 'GTFlexaXCompressedRegularItalic';
+}
+
+.third .title .collectibles {
+    font-family: 'GTFlexaXCompressedBoldItalic';
+    color: var(--green-fouth);
+}
+
+.third .description {
+    font-family: 'GTFlexaRegularItalic';
+    width: 70%;
+    font-size: 1.5rem;
+}
+
+.third .video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.third .video img {
+    width: 60%;
+    cursor: pointer;
+}
+
+
+.third .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    max-width: 100%;
+}
+
+.third .cards .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.third .cards .card img {
+    width: 80%;
+    padding-bottom: 10px;
+}
+
+.third .cards .card .tier {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-family: 'GTFlexaCompressedBold';
+}
+
+.third .cards .card .player {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-family: 'GTFlexaCompressedThinItalic';
+}
+
+.third .cards div.card:nth-child(4)>img:nth-child(1) {
+    position: absolute;
+    width: 95%;
+}
+
+.third .cards div.card:nth-child(4)>div:nth-child(2) {
+    position: absolute;
+    bottom: 10%;
+    left: 60%;
+    transform: translateX(-50%);
+}
+
+.third .cards div.card:nth-child(5)>img:nth-child(1) {
+    top: 0;
+    position: absolute;
+    width: 88%;
+}
+
+.third .cards div.card:nth-child(5)>div:nth-child(2) {
+    bottom: 10%;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 55%;
+}
+
+.third .cards div.card:nth-child(6)>img:nth-child(1) {
+    top: 0;
+    width: 88%;
+}
+
+.third .cards div.card:nth-child(6)>div:nth-child(2) {
+    bottom: 10%;
+    transform: translateX(-50%);
+    left: 55%;
+}
+
+.third .cards .third .cards div.card:nth-child(7)>img:nth-child(1) {
+    top: 0;
+    width: 83%;
+}
+
+.third .cards div.card:nth-child(7)>div:nth-child(2) {
+    bottom: 10%;
+    transform: translateX(-50%);
+    left: 52%;
+}
+
+.modalPlayer,
+.modalVideo {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+.modalPlayer.close,
+.modalVideo.close {
+    display: none;
+}
+
+.modalPlayer .overlay,
+.modalVideo .overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0f002d87;
+}
+
+.modalPlayer .modal,
+.modalVideo .modal {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalPlayer .modal .card>img {
+    max-height: 75vh;
+}
+
+.modalPlayer .modal .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90vh;
+    width: 100vw;
+    gap: 20px;
+}
+
+.modalPlayer .modal .card .player {
+    font-size: 3rem;
+    font-family: 'GTFlexaCompressedThinItalic';
+    text-transform: uppercase;
+}
+
+.modalPlayer .modal>img {
+    position: absolute;
+    bottom: 2vh;
+    transform: translateX(-50%);
+    left: 50%;
+    max-height: 8vh;
+    cursor: pointer;
+}
+
+.modalPlayer .modal .close,
+.modalVideo .modal .close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.modalVideo .modal {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalVideo .modal iframe {
+    box-shadow: 0px 20px 20px -5px var(--purple);
+    width: 70vw;
+    aspect-ratio: 16/9;
+}
+
+.fourth {
+    height: 133vh;
+    background: url(./Assets/img/BackGround4.png);
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    padding: 0 15%;
+    flex-direction: column;
+    position: relative;
+}
+
+.fourth>div {
+    z-index: 1;
+}
+
+.fourth>div.title {
+    width: 100%;
+    margin-top: 10vh;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-size: 6rem;
+}
+
+.fourth .title .drops {
+    font-family: 'GTFlexaCompressedBoldItalic';
+    color: var(--green-fouth);
+}
+
+.fourth .title .previous {
+    color: var(--green-fouth);
+}
+
+
+.fourth .carousel {
+    display: grid;
+    grid-template-columns: 18% 18% auto 18% 18%;
+    max-width: 130%;
+    align-items: center;
+}
+
+.fourth .carousel .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60%;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.fourth .carousel .card img {
+    max-width: 80%;
+}
+
+.fourth .carousel .card .title {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    max-width: 70%;
+    text-align: center;
+    font-family: 'GTFlexaCompressedMediumItalic';
+}
+
+.fourth .carousel .card.selected {
+    height: auto;
+}
+
+.fourth .carousel .card.selected .infoWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fourth .carousel .card.selected .title {
+    color: var(--green-fouth);
+    font-size: 2rem;
+    max-width: 80%;
+}
+
+.fourth .carousel .card.selected .soldout {
+    font-size: 2rem;
+    color: var(--green-fouth);
+    font-family: 'GTFlexaCompressedMediumItalic';
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+.fourth .carousel .card.selected .subtitle {
+    font-family: 'GTFlexaCompressedMediumItalic';
+    color: var(--green-fouth);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.fourth .carousel .card.selected.description {
+    font-family: 'GTFlexaCompressedMediumItalic';
+    text-transform: uppercase;
+    font-size: 1rem;
+    max-width: 60%;
+}
+
+.fourth>img {
+    max-width: 5vw;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.fourth .blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 133vh;
+    width: 100vw;
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+.fifth {
+    height: 120vh;
+    background: url(./Assets/img/BackGround5.png);
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    padding: 0 10%;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.fifth>.title {
+    font-size: 7rem;
+    text-transform: uppercase;
+    width: 90%;
+    font-family: 'GTFlexaCompressedBoldItalic';
+    color: var(--green-fouth);
+    margin-top: 10vh;
+}
+
+.fifth .subtitle {
+    font-size: 2rem;
+    width: 70%;
+    font-family: 'GTFlexaCondensedRegular';
+}
+
+.fifth .partnerHeader .clubsWrapper {
+    flex: 2;
+}
+
+.fifth .partnerHeader .starsWrapper {
+    flex: 6;
+}
+
+.fifth .partnerHeader {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.fifth .partnerHeader>div>div {
+    font-size: 1.5rem;
+    font-family: 'GTFlexaCompressedBold';
+    color: var(--green-fouth);
+    text-transform: uppercase;
+    padding-top: 3px;
+}
+
+.fifth .partnerHeader>div>span {
+    width: 100%;
+    border: .5px solid var(--green-fouth);
+    height: 0px;
+}
+
+.fifth .partnerHeader>div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.fifth .partners {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.fifth .partners .clubs {
+    display: flex;
+    flex: 2;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10%;
+}
+
+.fifth .partners .stars {
+    display: flex;
+    flex: 6;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.fifth .partners>div>.partner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 40%;
+    gap: 10px;
+}
+
+.fifth .partners>div>.partner>img {
+    aspect-ratio: 4/5;
+    width: 7vw;
+}
+
+.fifth .partners>div>.partner .title {
+    font-family: 'GTFlexaCompressedBold';
+    font-size: 1.5rem;
+    color: var(--green-main);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.fifth .sponsorHeader {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.fifth .sponsorHeader > div > div {
+    font-size: 1.5rem;
+    font-family: 'GTFlexaCompressedBold';
+    color: var(--green-fouth);
+    text-transform: uppercase;
+    padding-top: 3px;
+}
+
+.fifth .sponsorHeader > div > span {
+    width: 100%;
+    border: .5px solid var(--green-fouth);
+    height: 0px;
+}
+
+.fifth .sponsorHeader > div {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fifth .sponsorHeader .blockchains {
+    flex: 4;
+}
+
+.fifth .sponsorHeader .wallets {
+    flex: 2;
+}
+
+.fifth .sponsorHeader .web3 {
+    flex: 4;
+}
+
+.fifth .sponsorHeader .web3 .title {
+    min-width: 40%;
+}
+
+.fifth .sponsor {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.fifth .sponsor .blockchains {
+    flex: 4;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.fifth .sponsor .wallets {
+    flex: 2;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    height: 100%;
+}
+
+.fifth .sponsor .web3 {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+}
+
+.fifth .sponsor .blockchains img {
+    max-width: 28%;
+}
+
+.fifth .sponsor .wallets img {
+    max-width: 40%;
+}
+
+.fifth .sponsor .web3 img {
+    width: 40%;
+}
