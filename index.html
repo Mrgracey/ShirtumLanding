@@ -5,17 +5,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Landing Shirtum</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(()=>{
+            $(window).scroll(function() {    
+                var scroll = $(window).scrollTop();
+                if (scroll >= 200) {
+                    $(".nav").addClass("scrolled");
+                }else{
+                    $(".nav").removeClass("scrolled");
+                }
+            });
+
+            const cardCount = $('.third .cards .card').length;
+            $('.third .cardWrapper .cards').css('width', ((cardCount * 100)/7)+'%');
+           
+            if ($( window ).width() <= 700) {
+                //select all drops on mobile
+                $('.fourth .carousel .card.selected').toggleClass('selected');
+                $('.fourth .carousel .card').toggleClass('selected');
+
+                
+                $('.nav.mobile .bars').on('click', (event)=>{
+                    $('.nav.mobile .elements').toggleClass('active')
+                })
+
+                $('.nav.mobile .elements .close').on('click', (event)=>{
+                    $('.nav.mobile .elements').toggleClass('active')
+                })
+
+                $(".elements .fixed a").click(function(event) {
+                    $('.nav.mobile .elements').toggleClass('active')
+                });
+            }else{
+                //select drop function
+                $('.fourth .carousel .card img').on('click', (event)=>{
+                    
+                    $('.fourth .carousel .card.selected').toggleClass('selected');
+                    $(event.target).parent().addClass('selected');
+                    var id =  $(event.target).parent().attr('id')
+                    var cardQty = $(event.target).parent().parent().children().length;
+                    var cardSize = (100/cardQty)-((cardQty*2)/5);
+                    
+                    var templateColumns = '';
+                    id = Number(id);
+                    for (let index = 1; index <= cardQty; index++) {
+                        
+                        
+                        if (index == Number(id)) {
+                            templateColumns += 'auto ';
+                        }else{
+                            templateColumns += cardSize+'% ';
+                        }
+                    }
+                    templateColumns = templateColumns.slice(0, -1)
+                    $('.fourth .carousel').css('grid-template-columns', templateColumns);
+                })
+
+                $(".sixth .roadmap .topQuarters").on({
+                    mouseenter: function () {
+                        $('.sixth .roadmap .bottomQuarters').css('margin-bottom', '2%')
+                        $('.sixth .roadmap .topQuarters').css('margin-top', '25%')
+                    }
+                });
+                $(".sixth .roadmap .bottomQuarters").on({
+                    mouseenter: function () {
+                        $('.sixth .roadmap .topQuarters').css('margin-top', '2%')
+                        $('.sixth .roadmap .bottomQuarters').css('margin-bottom', '30%')
+                    }
+                });
+
+                $(".sixth .roadmap").on({
+                    mouseleave: function () {
+                        $('.sixth .roadmap .topQuarters').css('margin-top', '2%')
+                        $('.sixth .roadmap .bottomQuarters').css('margin-bottom', '2%')
+                    }
+                });
+
+                
+            }
+
+            
+
+            $('.third .video').on('click', (event)=>{ 
+                $('.modalVideo').removeClass('close');
+                $('iframe').contents().find('video').each(function () 
+                {
+                    this.play();
+                });
+            });
+
+            $('.modalVideo .close').on('click', (event)=>{ 
+                $('.modalVideo').addClass('close');
+                $('iframe').contents().find('video').each(function () 
+                {
+                    this.pause();
+                });
+            });
+
+            $('.language div').on('click', (event)=>{ 
+                $('.language div.selected').removeClass('selected')
+                $(event.target).addClass('selected');
+                var language = $(event.target).text();
+                
+                switch (language) {
+                    case 'eng':
+                        $("body").removeClass();
+                        $('body').addClass('EN');
+                        break;
+                    case 'esp':
+                        $("body").removeClass();
+                        $('body').addClass('ES');
+                        break;
+                
+                    default:
+                        break;
+                }
+            });
+            
+            $(".elements .fixed a").click(function(event) {
+                var linkTo = $(event.target).attr('href')
+                $('html, body').animate({
+                    scrollTop: $(linkTo).offset().top
+                }, 2000);
+            });
+            
+            $('.modalPlayer .close').on('click', (event)=>{ 
+                $('.modalPlayer').addClass('close');
+            });
+
+            $('.third .cards .card img').on('click', (event)=>{ 
+                $('.modalPlayer').toggleClass('close');
+
+                const id = $(event.target).attr('id');
+                const name = $(event.target).attr('data-name');
+                const image = $(event.target).attr('data-photo');
+                const opensl = $(event.target).attr('data-opensl');
+                
+                $('.modalPlayer .modal').attr('id', id);
+                $('.modalPlayer .card div').text(name);
+            });
+
+            $('.modalPlayer .modal .arrows').on('click', (event)=>{ 
+                const id = $(event.target).attr('id');
+                const modalId = $('.modalPlayer .modal').attr('id')
+                let cardSelector = ''
+                if (id == 'left') {
+                    modalId-1 <= 0 ? cardSelector = '.third .cards .card #' + cardCount : cardSelector = '.third .cards .card #' + (modalId-1);
+                    
+                }else{
+                    modalId+1 >= cardCount ? cardSelector = '.third .cards .card #1' : cardSelector = '.third .cards .card #' + (modalId+1);
+                }
+                    let idCard = $(cardSelector).attr('id');
+                    let name = $(cardSelector).attr('data-name');
+                    let image = $(cardSelector).attr('data-photo');
+                    let opensl = $(cardSelector).attr('data-opensl');
+
+                    $('.modalPlayer .modal').attr('id', idCard);
+                    $('.modalPlayer .card div').text(name);
+            });
+
+        })
+    </script>
 </head>
-<body>
+<body class="EN">
     <div class="nav">
-        <div class="logo"></div>
-        <div class="club">w3.0 club</div>
-        <div class="collectibles">w3.0 collectibles</div>
-        <div class="partners">partners</div>
-        <div class="drops">previous drops</div>
-        <div class="about">about us</div>
-        <div class="myshi">My Shi</div>
+        <div class="bottomBorder">
+            <span class="left"></span>
+            <span class="right"></span>
+        </div>
+        <div class="elements">
+            <div class="language">
+                <div class="selected">eng</div>
+                <div>esp</div>
+            </div>
+            <div class="logo"></div>
+            <div class="fixed">
+                <a href="#second" class="club">w3.0 club</a>
+                <a href="#third" class="collectibles">w3.0 collectibles</a>
+                <a href="#fourth" class="partners">partners</a>
+                <a href="#fifth" class="drops">previous drops</a>
+                <a href="#sixth" class="about">about us</a>
+                <a href="https://myshi.shirtum.com/staking" class="myshi">My Shi</a>
+            </div>
+            
+        </div>
+        
     </div>
+    <div class="nav mobile">
+        <div class="bottomBorder">
+            <span class="left"></span>
+            <span class="right"></span>
+        </div>
+        <div class="logo"></div>
+        <img class="bars" src="./Assets/Icons/bars-solid.svg" alt="">
+        <div class="elements">
+            <div class="close">Close</div>
+            <div class="language">
+                <div class="selected">eng</div>
+                <div>esp</div>
+            </div>
+            
+            <div class="fixed">
+                <a href="#second" class="club">w3.0 club</a>
+                <a href="#third" class="collectibles">w3.0 collectibles</a>
+                <a href="#fourth" class="partners">partners</a>
+                <a href="#fifth" class="drops">previous drops</a>
+                <a href="#sixth" class="about">about us</a>
+                <a href="https://myshi.shirtum.com/staking" class="myshi">My Shi</a>
+            </div>
+            
+        </div>
+        
+    </div>
+    
     <div class="sideNav">
         <div class="socials">
             <div class="telegram"></div>
@@ -30,6 +233,10 @@
     <div class="modalPlayer close">
         <div class="overlay"></div>
         <div class="modal">
+            <div class="arrows">
+                <img id="left" src="./Assets/Icons/ArrowLeft.svg" alt="">
+                <img id="right" src="./Assets/Icons/ArrowRight.svg" alt="">
+            </div>
             <div class="card">
                 <img src="./Assets/img/NicoParejaIndicator.png" alt="">
                 <div class="player">Nico Pareja</div>
@@ -41,43 +248,51 @@
     <div class="modalVideo close">
         <div class="overlay"></div>
         <div class="modal">
-            <iframe src="https://www.youtube.com/embed/PT3B_jF_ins" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="./Assets/Video/shirtum_w3.0_collectibles_16-9 (1080p).mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="close"><img src="./Assets/Icons/close.svg" alt=""></div>
         </div>
     </div>
-    <div class="first">
+    <div class="first" id="first">
         <div class="header">
             <div class="titleWrapper">
                 <div class="title">Welcome to <span class="shirtum">Shirtum</span></div>
                 <div class="btn club">Join the club</div>
             </div>
             <div class="description">
-                ¡Descubre el entorno digital que conecta clubes, deportistas y aficionados 
-                en una pasión común! Sumergete en experiencias deportivas físicas y digitales 
-                únicas.
+                <div class="textsCarousel">
+                    <div class="text">
+                    </div>
+                    <div class="text">
+                    </div>
+                    <div class="text">
+                    </div>
+                    <div class="text">
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
-    <div class="second">
+    <div class="second" id="second">
         <div class="left">
             <div class="header">
                 <div class="title"><img src="./Assets/Icons/ShieldShirtumCrown.svg" alt="ShieldShirtumCrown"><span class="shirtum">Shirtum W</span><span class="number">3.0</span><span class="club"> Club</span></div>
             </div>
             <div class="boxWrapper">
                 <div class="box basic">
-                    <div>$SHI es token utility que brinda acceso exclusivo al <span class="special">Shirtum W3.0 Club.</span></div>
-                    <div>Al poseer y hacer stake de $SHI, podrás disfrutar de una serie de beneficios reservados sólo para miembros del Club.</div>
+                    <div><span class="special">Shirtum W3.0 Club.</span></div>
+                    <div></div>
                 </div>
                 <div class="box numbers">
-                    <div class="one">Consigue $SHI</div>
-                    <div class="two">Haz stake de los tokens</div>
-                    <div class="three">Y disfruta de todos los beneficios</div>
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
                 </div>
             </div>
         </div>
         <div class="right">
             <div class="buyShi">
-                <div class="text">Compra $SHI en:</div>
+                <div class="text"></div>
                 <div class="busdWrapper">
                     <div class="btn busd">BUSD</div>
                     <span></span>
@@ -89,64 +304,88 @@
             </div>
             <div class="extras">
                 <div class="btnWrapper">
-                    <div class="pancakeSwap"><img src="./Assets/img/PancakeSwap.png" alt="PancakeSwap"></div>
-                    <div class="gateIo"><img src="./Assets/img/GateIo.png" alt="GateIo"></div>
+                    <a href="https://pancakeswap.finance/info/token/0x7269d98af4aa705e0b1a5d8512fadb4d45817d5a" target="_blank" class="pancakeSwap"><img src="./Assets/img/PancakeSwap.png" alt="PancakeSwap"></a>
+                    <a class="gateIo"><img src="./Assets/img/GateIo.png" alt="GateIo"></a>
                 </div>
                 <div class="btn whitepaper">whitepaper <img src="./Assets/Icons/Download.svg" alt="Download Icon"></div>
             </div>
         </div>
     </div>
-    <div class="third">
+    <div class="third" id="third">
         <div class="title"><img src="./Assets/Icons/ShieldShirtumCrown.svg" alt="ShieldShirtumCrown"><span class="shirtum">Shirtum W</span><span class="number">3.0</span><span class="collectibles"> collectibles</span></div>
-        <div class="description">¡Haz staking y recibe gratis los coleccionables de nuestros partners! Reúne, vende, intercambia y evoluciona los coleccionables para completar nuestro álbum digital. ¡Prepárate para desbloquear recompensas únicas y experiencias exclusivas!</div>
+        <div class="description"></div>
         <div class="video"><img src="./Assets/img/Video.png" alt="video"></div>
-        <div class="cards">
-            <div class="card">
-                <img src="./Assets/img/NicoPareja.png" alt="Nico Pareja">
-                <div class="tier">Bronze</div>
-                <div class="player">Nico Pareja</div>
-            </div>
-            <div class="card">
-                <img src="./Assets/img/DiegoPerotti.png" alt="Diego Perotti">
-                <div class="tier">Gold</div>
-                <div class="player">Diego Perotti</div>
-            </div>
-            <div class="card">
-                <img src="./Assets/img/MarianoIzco.png" alt="Mariano Izco">
-                <div class="tier">Bronze</div>
-                <div class="player">Mariano Izco</div>
-            </div>    
-            <div class="card">
-                <img src="./Assets/img/SILVER2.png" alt="Silver">
-                <div class="tier">Silver</div>
-            </div>
-            <div class="card">
-                <img src="./Assets/img/GOLD2.png" alt="Diamond">
-                <div class="tier">Diamond</div>
-            </div>
-            <div class="card">
-                <img src="./Assets/img/SILVER.png" alt="Silver">
-                <div class="tier">Silver</div>
-            </div>
-            <div class="card">
-                <img src="./Assets/img/GOLD1.png" alt="Special">
-                <div class="tier">Special</div>
+        <div class="cardWrapper">
+            <div class="cards">
+                <div class="card">
+                    <img id="1" src="./Assets/img/NicoPareja.png" alt="Nico Pareja" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Bronze</div>
+                    <div class="player">Nico Pareja</div>
+                </div>
+                <div class="card">
+                    <img id="2" src="./Assets/img/DiegoPerotti.png" alt="Diego Perotti" data-name="Diego Perotti" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Gold</div>
+                    <div class="player">Diego Perotti</div>
+                </div>
+                <div class="card">
+                    <img id="3" src="./Assets/img/MarianoIzco.png" alt="Mariano Izco" data-name="Mariano Izco" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Bronze</div>
+                    <div class="player">Mariano Izco</div>
+                </div>    
+                <div class="card">
+                    <img id="4" src="./Assets/img/SILVER2.png" alt="Silver" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Silver</div>
+                </div>
+                <div class="card">
+                    <img id="5" src="./Assets/img/GOLD2.png" alt="Diamond" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Diamond</div>
+                </div>
+                <div class="card">
+                    <img id="6" src="./Assets/img/SILVER.png" alt="Silver" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Silver</div>
+                </div>
+                <div class="card">
+                    <img id="7" src="./Assets/img/GOLD1.png" alt="Special" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Special</div>
+                </div>
+                <div class="card">
+                    <img id="7" src="./Assets/img/GOLD1.png" alt="Special" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Special</div>
+                </div>
+                <div class="card">
+                    <img id="7" src="./Assets/img/GOLD1.png" alt="Special" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Special</div>
+                </div>
+                <div class="card">
+                    <img id="7" src="./Assets/img/GOLD1.png" alt="Special" data-name="Nico Pareja" data-opensl="" data-photo="./Assets/NicoParejaIndicator.png">
+                    <div class="tier">Special</div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="fourth">
+    <div class="fourth" id="fourth">
         <div class="blur"></div>
         <div class="title"><span class="previous">Previous</span><span class="drops">Drops</span></div>
         <div class="carousel">
-            <div class="card">
+            <div class="card" id="1">
+                <div class="soldout">sold out</div>
                 <img src="./Assets/img/MaravillaCollectible.png" alt="">
-                <div class="title">Maravilla Collection</div>
+                <div class="infoWrapper">
+                    <div class="title">Maravilla Collection</div>
+                    <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                    <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                </div>
             </div>
-            <div class="card">
+            <div class="card" id="2">
+                <div class="soldout">sold out</div>
                 <img src="./Assets/img/CuervoCollectible.png" alt="">
-                <div class="title">Los Cuervos de Boedo</div>
+                <div class="infoWrapper">
+                    <div class="title">Los Cuervos de Boedo</div>
+                    <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                    <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                </div>
             </div>
-            <div class="card selected">
+            <div class="card selected" id="3">
                 <div class="soldout">sold out</div>
                 <img src="./Assets/img/GalatasarayCollectible.png" alt="">
                 <div class="infoWrapper">
@@ -155,27 +394,92 @@
                     <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="4">
+                <div class="soldout">sold out</div>
                 <img src="./Assets/img/R10Collectible.png" alt="">
-                <div class="title">The Ronaldinho's Collection</div>
+                <div class="infoWrapper">
+                    <div class="title">The Ronaldinho's Collection</div>
+                    <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                    <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                </div>
             </div>
-            <div class="card">
+            <div class="card" id="5">
+                <div class="soldout">sold out</div>
                 <img src="./Assets/img/SavilaCollectible.png" alt="">
-                <div class="title">Saviola Collection</div>
+                <div class="infoWrapper">
+                    <div class="title">Saviola Collection</div>
+                    <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                    <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                </div>
             </div>
         </div>
         <img src="./Assets/Icons/buttonOs.png" alt="">
     </div>
-    <div class="fifth">
+    <div class="fourth mobile" id="fourth">
+        <div class="blur"></div>
+        <div class="title"><span class="previous">Previous</span><span class="drops">Drops</span></div>
+        <div class="cardWrapper">
+            <div class="carousel">
+                <div class="card" id="1">
+                    <div class="soldout">sold out</div>
+                    <img src="./Assets/img/MaravillaCollectible.png" alt="">
+                    <div class="infoWrapper">
+                        <div class="title">Maravilla Collection</div>
+                        <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                        <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                    </div>
+                </div>
+                <div class="card" id="2">
+                    <div class="soldout">sold out</div>
+                    <img src="./Assets/img/CuervoCollectible.png" alt="">
+                    <div class="infoWrapper">
+                        <div class="title">Los Cuervos de Boedo</div>
+                        <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                        <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                    </div>
+                </div>
+                <div class="card selected" id="3">
+                    <div class="soldout">sold out</div>
+                    <img src="./Assets/img/GalatasarayCollectible.png" alt="">
+                    <div class="infoWrapper">
+                        <div class="title">Galatasaray SK</div>
+                        <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                        <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                    </div>
+                </div>
+                <div class="card" id="4">
+                    <div class="soldout">sold out</div>
+                    <img src="./Assets/img/R10Collectible.png" alt="">
+                    <div class="infoWrapper">
+                        <div class="title">The Ronaldinho's Collection</div>
+                        <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                        <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                    </div>
+                </div>
+                <div class="card" id="5">
+                    <div class="soldout">sold out</div>
+                    <img src="./Assets/img/SavilaCollectible.png" alt="">
+                    <div class="infoWrapper">
+                        <div class="title">Saviola Collection</div>
+                        <div class="subtitle">Ali Sami Yen Collections – OCT ‘21</div>
+                        <div class="description">- First-Ever historical nft collections of a football club.<br>- Close to 1,000 units dropped in total.<br>- First Drop: Sold-Out in 57 seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <img src="./Assets/Icons/buttonOs.png" alt="">
+    </div>
+    <div class="fifth" id="fifth">
         <div class="title">Partners</div>
-        <div class="subtitle">Decenas de atletas y clubes se han unido ya a Shirtum</div>
+        <div class="subtitle"></div>
         <div class="partnerHeader">
             <div class="clubsWrapper">
                 <div class="clubs">Clubs</div>
                 <span></span>
             </div>
             <div class="starsWrapper">
-                <div class="stars">ShirtumStars</div>
+                <div class="stars">Shirtum Stars</div>
                 <span></span>
             </div>
         </div>
@@ -243,6 +547,199 @@
             <div class="web3">
                 <img src="./Assets/img/metasoccer.png" alt="Metasoccer">
             </div>
+        </div>
+    </div>
+    <div class="fifth mobile" id="fifthmobile">
+        <div class="title">Partners</div>
+        <div class="subtitle"></div>
+        <div class="clubsWrapper">
+            <div class="clubsHeader">
+                <div class="clubs">Clubs</div>
+                <span></span>
+            </div>
+            <div class="clubs">
+                <div class="partner">
+                    <img src="./Assets/img/GalatasarayShield.png" alt="Galatasaray">
+                    <div class="title">Galatasaray</div>
+                </div>
+                <div class="partner">
+                    <img src="./Assets/img/CASLAShield.png" alt="CASLA">
+                    <div class="title">San Lorenzo de Almagro</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="starsWrapper">
+            
+            <div class="starsHeader">
+                <div class="stars">Shirtum Stars</div>
+                <span></span>
+            </div>
+            <div class="stars">
+                <div class="partner">
+                    <img src="./Assets/img/IvanShield.png" alt="Rakitiç">
+                    <div class="title">Iván Rakitiç</div>
+                </div>
+                <div class="partner">
+                    <img src="./Assets/img/MotorcitoShield.png" alt="Motorcito">
+                    <div class="title">Rodrigo De Paul</div>
+                </div>
+                <div class="partner">
+                    <img src="./Assets/img/PapuShield.png" alt="Papu">
+                    <div class="title">Papu Gomez</div>
+                </div>
+                <div class="partner">
+                    <img src="./Assets/img/DibuShield.png" alt="Dibu">
+                    <div class="title">Emiliano Martinez</div>
+                </div>
+                <div class="partner">
+                    <img src="./Assets/img/R10Shield.png" alt="Ronaldinho">
+                    <div class="title">Ronaldinho</div>
+                </div>
+                <div class="partner">
+                    <img src="./Assets/img/MoreShield.png" alt="More">
+                    <div class="title">More...</div>
+                </div>
+            </div>
+        </div>
+        <div class="blockchainsWrapper">
+            <div class="blockchainsHeader">
+                <div class="title">Blockchains</div>
+                <span></span>
+            </div>
+            <div class="blockchains">
+                <img src="./Assets/img/ethe.png" alt="Eth">
+                <img src="./Assets/img/binance.png" alt="Binance">
+                <img src="./Assets/img/polygon.png" alt="Polygon">
+            </div>
+        </div>
+        <div class="walletsWrapper">
+            <div class="walletsHeader">
+                <div class="title">Wallets</div>
+                <span></span>
+            </div>
+            <div class="wallets">
+                <img src="./Assets/img/metamask.png" alt="Metamask">
+            </div>
+        </div>
+        <div class="web3Wrapper">
+            <div class="web3Header">
+                <div class="title">Web 3 games & Metaverse</div>
+                <span></span>
+            </div>
+            <div class="web3">
+                <img src="./Assets/img/metasoccer.png" alt="Metasoccer">
+            </div>
+        </div>
+    </div>
+    <div class="sixth" id="sixth">
+        <div class="title">About Us</div>
+        <div class="holders">
+            <div class="team">Team</div>
+            <span></span>
+        </div>
+        <div class="team">
+            <img src="./Assets/img/people/Layer 8.png" alt="">
+            <img src="./Assets/img/people/Layer 9.png" alt="">
+            <img src="./Assets/img/people/Layer 10.png" alt="">
+            <img src="./Assets/img/people/Layer 11.png" alt="">
+            <img src="./Assets/img/people/Layer 12.png" alt="">
+            <img src="./Assets/img/people/Layer 13.png" alt="">
+        </div>
+        <div class="holders">
+            <div class="coFounders">Co-Founders: Professional Football Players</div>
+            <span></span>
+        </div>
+        <div class="coFounders">
+            <img src="./Assets/img/people/Layer 15.png" alt="">
+            <img src="./Assets/img/people/Layer 16.png" alt="">
+            <img src="./Assets/img/people/Layer 17.png" alt="">
+            <img src="./Assets/img/people/Layer 18.png" alt="">
+        </div>
+        <div class="holders">
+            <div class="roadmap">Roadmap 2023</div>
+            <span></span>
+        </div>
+        <div class="roadmap">
+            <div class="topQuarters">
+                <div class="Q1">
+                    <img src="./Assets/Quarters/Q1.png" alt="">
+                    <img src="./Assets/Quarters/Q1 Text.png" alt="">
+                </div>
+                <div class="Q3">
+                    <img src="./Assets/Quarters/Q3.png" alt="">
+                    <img src="./Assets/Quarters/Q3 Text.png" alt="">
+                </div>
+            </div>
+            <img src="./Assets/Quarters/QBar.png" alt="">
+            <div class="bottomQuarters">
+                <div class="Q2">
+                    <img src="./Assets/Quarters/Q2.png" alt="">
+                    <img src="./Assets/Quarters/Q2 Text.png" alt="">
+                </div>
+                <div class="Q4">
+                    <img src="./Assets/Quarters/Q4.png" alt="">
+                    <img src="./Assets/Quarters/Q4 Text.png" alt="">
+                </div>
+            </div>
+            <img src="./Assets/Quarters/Nomenclatura.png" alt="">
+        </div>
+    </div>
+    <div class="seventh" id="seventh">
+        <div class="news">
+            <div class="card">
+                <img src="./Assets/img/newsbackground.jpeg" alt="">
+                <div class="info">
+                    <div class="date">June 6 2023</div>
+                    <div class="title">Shirtum W3.0 Rewards</div>
+                    <div class="minutes">3 min read</div>
+                </div>
+                <a href="https://shirtum.medium.com/shirtum-w3-0-rewards-21dd9414233d" target="_blank" class="btn readMore">Read more</a>
+            </div>
+            <div class="card">
+                <img src="./Assets/img/newsbackground-1.jpeg" alt="">
+                <div class="info">
+                    <div class="date">June 1 2023</div>
+                    <div class="title">Album W3.0 Collectibles</div>
+                    <div class="minutes">3 min read</div>
+                </div>
+                <a href="https://shirtum.medium.com/album-w3-0-collectibles-c5196c1bd602" target="_blank" class="btn readMore">Read more</a>
+            </div>
+            <div class="card">
+                <img src="./Assets/img/newsbackground-2.jpeg" alt="">
+                <div class="info">
+                    <div class="date">March 28 2023</div>
+                    <div class="title">Bridge Multichain available for $SHI</div>
+                    <div class="minutes">2 min read</div>
+                </div>
+                <a href="https://shirtum.medium.com/bridge-multichain-available-for-shi-1c1e414f48e4" target="_blank" class="btn readMore">Read more</a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="top">
+                <div class="left">
+                    <div class="shirtum">
+                        <div class="shield"><img src="./Assets/Icons/ShieldShirtumWhite.svg" alt=""></div>
+                        <div class="text">
+                            welcome to
+                            <span>Shirtum</span>
+                        </div>
+                    </div>
+                    <div class="joinBtn">Join the club</div>
+                </div>
+                <div class="rigth">
+                    <div class="btn whitepaper">whitepaper <img src="./Assets/Icons/Download.svg" alt="Download Icon"></div>
+                    <div class="socials">
+                        <div class="telegram"></div>
+                        <div class="discord"></div>
+                        <div class="instagram"></div>
+                        <div class="twitter"></div>
+                        <div class="twitch"></div>
+                        <div class="tiktok"></div>
+                    </div>
+                </div>
+            </div>
+            <img src="./Assets/img/newWay.png" alt="">
         </div>
     </div>
 </body>
